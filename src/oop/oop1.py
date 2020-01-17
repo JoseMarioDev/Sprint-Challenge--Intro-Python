@@ -25,7 +25,7 @@ class Vehicle:
     pass
 
 
-class GroundVehicle(vehicle):
+class GroundVehicle(Vehicle):
     pass
 
 
