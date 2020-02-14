@@ -33,16 +33,17 @@ def cityreader(cities=[]):
     # TODO Implement the functionality to read from the 'cities.csv' file
     # For each city record, create a new City instance and add it to the
     # `cities` list
-    with open('cities.csv') as csv_file:
-        read_csv = csv.reader(csv_file, delimiter=',')
-        lineNum = 0
-        for row in read_csv:
-            if lineNum == 0:
-                lineNum += 1
-            else:
-                cities.append(City(row[0], float(row[3]), float(row[4])))
-                lineNum += 1
 
+    # opens the csv file, saves it as csv_file
+    with open('cities.csv') as csv_file:
+        # reads csv file, separates by ,
+        read_csv = csv.reader(csv_file, delimiter=',')
+        # skips next line
+        next(read_csv)
+        # loops over each row, appends entry into cities[]
+        for row in read_csv:
+            next(read_csv)
+            cities.append(City(row[0], float(row[3]), float(row[4])))
         return cities
 
 
@@ -82,6 +83,11 @@ for c in cities:
 # Salt Lake City: (40.7774,-111.9301)
 
 # TODO Get latitude and longitude values from the user
+# lat1 = input('Enter lat: ')
+# lon1 = input('Enter lon: ')
+
+# lat2 = input('Enter another lat: ')
+# lon2 = input('Enter another lon: ')
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
