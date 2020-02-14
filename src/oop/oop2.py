@@ -5,10 +5,12 @@
 
 
 class GroundVehicle():
+    # change default num_wheels to 4 in constructor
     def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
 
     # TODO
+    # added method called drive, returns vroom
     def drive(self):
         return 'vroooom'
 
@@ -21,9 +23,12 @@ class GroundVehicle():
 # Override the drive() method in Motorcycle so that it returns "BRAAAP!!"
 
 # TODO
+# create subclass Motorcycle
 class Motorcycle(GroundVehicle):
     def __init__(self):
+        # set num_wheels to 2 by passing to constructor of superclass
         super().__init__(2)
+    # overwrite drive method, returns braap
 
     def drive(self):
         return "BRAAAP!!"
@@ -40,5 +45,6 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 # TODO
+# for loop
 for i in vehicles:
     print(i.drive())
